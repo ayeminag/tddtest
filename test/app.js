@@ -15,6 +15,11 @@ describe('all', function(){
           message: "fucker"
         }, done);
     });
+
+    it("should return you made it here on get request", function(done) {
+      request(app).get('/')
+        .expect(200, "you made it, here!", done);
+    });
   });
 
   describe("mymiddlewares.somemiddleware", function() {

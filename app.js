@@ -3,6 +3,9 @@ var express = require('express'),
   mymiddlewares = require('./middlewares/mymiddlewares'),
   server = require('http').Server(app);
 
+app.get('/', function(req, res) {
+  res.send("you made it, here!");
+});
 app.post('/', mymiddlewares.somemiddleware(), function(req,res){
   res.json(req.body);
 });
